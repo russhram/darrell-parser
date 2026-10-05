@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "contentOrigins": ["https://apps.noordhoff.nl"],
+  "ssoOrigins": [
+    "https://engine.entree.kennisnet.nl",
+    "https://saml.magister.net",
+    "https://accounts.magister.net",
+    "https://zaam.magister.net"
+  ],
+  "assetOrigins": ["https://apps.noordhoff.nl"],
+  "credentialOrigins": ["https://accounts.magister.net", "https://zaam.magister.net"],
+  "main": "[data-learning-content], [data-testid='learning-content'], .learning-content, .lesson-content, main, [role='main']",
+  "menu": "[data-course-menu], [data-testid='table-of-contents'], [aria-label='Inhoudsopgave'], [aria-label='Table of contents'], .table-of-contents, nav",
+  "question": "[data-question-id], [data-testid='question'], .question-card, .exercise",
+  "tabs": "[role='tab'][data-content-id], [role='tab'][data-item-id]",
+  "ebook": "[data-ebook-reader], .ebook-reader, [aria-label='E-book reader']",
+  "ready": "[data-learning-content], [data-course-menu], [data-testid='table-of-contents'], main, [role='main']",
+  "notes": "Entree/ZAAM path observed without credentials. Protected course selectors are provisional; unknown inventory is reported as adapter_required, never complete. Extend only after inspecting the live course UI."
+}
