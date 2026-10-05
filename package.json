@@ -1,0 +1,38 @@
+{
+  "name": "darrell-parser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-viewer-assets.mjs",
+    "start": "node --env-file=.env dist/server.js --mode=extract",
+    "dev": "node --env-file=.env --import tsx src/server.ts --mode=extract",
+    "view": "node --env-file-if-exists=.env dist/server.js --mode=view",
+    "build:viewer": "node --env-file-if-exists=.env dist/cli/build-viewer.js",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fastify/cookie": "11.1.2",
+    "@fastify/rate-limit": "11.2.0",
+    "@fastify/static": "10.1.5",
+    "ajv": "8.20.0",
+    "archiver": "8.0.0",
+    "fastify": "5.12.5",
+    "ipaddr.js": "2.5.0",
+    "playwright": "1.63.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/archiver": "8.0.0",
+    "@types/node": "26.6.4",
+    "prettier": "3.8.3",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
+  }
+}

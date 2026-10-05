@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "discoveryId": { "type": "string", "pattern": "^[a-zA-Z0-9_-]{1,100}$" },
+    "selectedIds": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "uniqueItems": true,
+      "items": { "type": "string", "maxLength": 100 }
+    },
+    "options": {
+      "type": "object",
+      "properties": {
+        "textMode": { "const": "authorized_verbatim" },
+        "textPermission": { "enum": ["authorized", "public_domain", "user_owned"] },
+        "imagePermission": { "enum": ["authorized", "public_domain", "user_owned", "unknown"] },
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "enum": ["nl", "en"] }
+        },
+        "answerPolicy": { "const": "visible_only" }
+      },
+      "required": ["textMode", "textPermission", "imagePermission", "languages", "answerPolicy"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["discoveryId", "selectedIds", "options"],
+  "additionalProperties": false
+}
